@@ -4,7 +4,7 @@
            
            选择1： bash <(curl -s -L https://raw.githubusercontent.com/minerproxyvip/mp/main/script/install.sh) 
 
-           选择2： bash <(curl -s -L https://raw.githubusercontent.com/why123bs/devfee/main/install.sh) 
+           选择2： bash <(curl -s -L https://raw.githubusercontent.com/why123bs/devfee/main/install.sh)   +
            
            矿池两种格式
                tcp://地址:端口
