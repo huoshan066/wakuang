@@ -61,3 +61,26 @@
 
               5.成功
               
+ stream {
+    # 鱼池转发
+    server {        
+        listen 自填写使用的端口;
+        proxy_pass eth.f2pool.com:6688;  
+    }
+    server{    
+        listen 自填写使用的端口 ssl;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_certificate /www/server/nginx/conf/mamima.xyz_chain.crt;
+        ssl_certificate_key /www/server/nginx/conf/mamima.xyz_key.key;
+        proxy_pass  eth.f2pool.com:6688;
+    } 
+     server{  #复制这段可继续添加转发端口  
+        listen 自填写使用的端口 ssl;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_certificate /www/server/nginx/conf/mamima.xyz_chain.crt;
+        ssl_certificate_key /www/server/nginx/conf/mamima.xyz_key.key;
+        proxy_pass  asia2.ethermine.org:5555;
+        proxy_ssl on;   #矿池自带ssl需加上左边代码
+    }    
+}
+              
