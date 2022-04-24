@@ -53,18 +53,18 @@
               stream {
     # 鱼池转发
     server {        
-        listen 自填写使用的端口;
+        listen 12345端口;
         proxy_pass eth.f2pool.com:6688;  
     }
     server{    
-        listen 自填写使用的端口 ssl;
+        listen 12346 ssl;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_certificate /www/server/nginx/conf/mamima.xyz_chain.crt;
         ssl_certificate_key /www/server/nginx/conf/mamima.xyz_key.key;
         proxy_pass  eth.f2pool.com:6688;
     } 
      server{  #复制这段可继续添加转发端口  
-        listen 自填写使用的端口 ssl;
+        listen 12347 ssl;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_certificate /www/server/nginx/conf/mamima.xyz_chain.crt;
         ssl_certificate_key /www/server/nginx/conf/mamima.xyz_key.key;
@@ -73,6 +73,10 @@
     }    
     }
 
-              5.成功
+              5.开放端口
+              
+                 在安全中，添加12345/12346/12347等自己设置的端口号
+                 
+              6.结束
               
            
