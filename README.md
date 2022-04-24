@@ -61,7 +61,7 @@
 
               5.成功
               
- stream {
+stream {
     # 鱼池转发
     server {        
         listen 自填写使用的端口;
