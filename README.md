@@ -34,6 +34,8 @@
                     （运行完毕以后，请 清除浏览器缓存 并刷新宝塔面板！）
 
                     sed -i "s|bind_user == 'True'|bind_user == 'XXXX'|" /www/server/panel/BTPanel/static/js/index.js
+                    
+                    (默认安装软件，PHP7.2）
 
              2.申请证书
 
