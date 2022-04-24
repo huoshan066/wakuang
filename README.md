@@ -46,22 +46,9 @@
                     /www/server/nginx/conf
 
 
-             4.Nginx管理--配置修改--
+             4.Nginx管理--配置修改--（第一行与最后一行有空格，顶格输入）
 
-                   stream{
- 
-              server{
-        listen 11131 ssl;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_certificate /www/server/nginx/conf/mrcwong.ml_chain.crt;
-        ssl_certificate_key /www/server/nginx/conf/mrcwong.ml_key.key;
-        proxy_pass  ethash.poolbinance.com:1800;
-           }  
-          }
-
-              5.成功
-              
-stream {
+              stream {
     # 鱼池转发
     server {        
         listen 自填写使用的端口;
@@ -82,5 +69,8 @@ stream {
         proxy_pass  asia2.ethermine.org:5555;
         proxy_ssl on;   #矿池自带ssl需加上左边代码
     }    
-}
+    }
+
+              5.成功
               
+           
