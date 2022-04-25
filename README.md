@@ -79,4 +79,49 @@
                  
               6.结束
               
-           
+  搭建方法三：
+  
+              nginx搭建中专
+              
+              1.更新系统
+              
+                          apt update -y 
+                          
+              2.安装nignx和net
+              
+                          apt install nginx-full  -y
+                          
+                          apt install net-tools
+                          
+               3.修改文件
+               
+                          /etc/nginx/nginx.conf
+              
+                         为币安加SSL
+
+                stream {
+    server {        # 币安
+        listen 1800;
+        proxy_pass  ethash.poolbinance.com:1800;
+}
+    server {        # 币安 加密ssl  15555 -- 1800
+        listen 15555 ssl;
+        proxy_pass  ethash.poolbinance.com:1800;
+        ssl_certificate      /DATA/cert/minerhome.org.pem;
+        ssl_certificate_key  /DATA/cert/minerhome.org.key;
+}
+}
+                 4.在根目录新建文件夹DATA--cert,放入证书文件（两个.KEY/.PEM/.CRT)
+                 
+                       需要解析域名，获得证书
+                       
+                 5.其他
+                 
+                    修改连接数    ulimit -n
+                                 vim /etc/security/limits.conf
+                                  添加一行 root soft nofile 102400
+                                  reboot
+                                  systemctl restart nginx      # 重启nginx
+                                  systemctl status nginx       # 查看运行情况
+                                  netstat -antpl | grep nginx   # 看端口对不对
+                                  ufw disable   # 关闭防火墙   后台
