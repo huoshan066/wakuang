@@ -103,14 +103,14 @@
     server {        # 币安
         listen 1800;
         proxy_pass  ethash.poolbinance.com:1800;
-}
+                       }
     server {        # 币安 加密ssl  15555 -- 1800
         listen 15555 ssl;
         proxy_pass  ethash.poolbinance.com:1800;
         ssl_certificate      /DATA/cert/minerhome.org.pem;
         ssl_certificate_key  /DATA/cert/minerhome.org.key;
-}
-}
+                       }
+                       }
                  4.在根目录新建文件夹DATA--cert,放入证书文件（两个.KEY/.PEM/.CRT)
                  
                        需要解析域名，获得证书
